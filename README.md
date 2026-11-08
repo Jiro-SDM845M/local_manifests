@@ -1,20 +1,31 @@
-# Jiro-SDM845M Local Manifests
+# Local Manifests for Xiaomi POCO F1 (`beryllium`) on LineageOS Mainline
 
-Official local manifest repository for maintaining and building **LineageOS on Mainline Linux Kernel (Linux 6.x LTS)** for Qualcomm Snapdragon 845 devices, specifically **Xiaomi POCO F1 (`beryllium`)**.
+This repository provides the local manifest required to build **LineageOS Mainline** (Linux 6.x / 7.x) on the **Xiaomi POCO F1 (`beryllium`)** and SDM845 family.
 
-## Architecture Overview
-This distribution leverages the official LineageOS Mainline framework:
-* `device/mainline/common`: Generic upstream kernel Android board and init scripts.
-* `device/mainline/qcom-common`: Qualcomm SoC mainline configurations and `lk2nd` bootloader integration.
-* `hardware/mainline/*`: Open-source HALs for standard Linux interfaces (IIO sensors, ALSA audio, sysfs LEDs/vibrators).
-* `external/linux-firmware-mainline`: Firmware binaries from `kernel.org`.
-* `device/xiaomi/beryllium`: POCO F1 mainline device tree.
-* `kernel/xiaomi/sdm845`: Linux 6.x LTS kernel with in-tree SDM845 and Beryllium DTS support.
+## Architecture: Direction A (Lean Firmware Symlink)
+- **No separate proprietary vendor repository**: Firmware blobs (`adsp`, `cdsp`, `modem`, `venus`, `tas2559`) are dynamically symlinked to the device's native `/vendor/firmware_mnt/image/` partition at runtime.
+- **Open-source Userspace**: Mesa Freedreno Turnip Vulkan, open-source QRTR/QMI RIL (`qrild`), and AIDL audio HAL.
 
-## Usage
-Clone or copy `beryllium_mainline.xml` into your ROM source tree's `.repo/local_manifests/`:
-```bash
-mkdir -p .repo/local_manifests
-curl -sL https://raw.githubusercontent.com/Jiro-SDM845M/local_manifests/main/beryllium_mainline.xml -o .repo/local_manifests/beryllium_mainline.xml
-repo sync -j$(nproc --all)
-```
+## How to Use
+
+1. Initialize your LineageOS tree (e.g. `lineage-24.0`):
+   ```bash
+   repo init -u https://github.com/LineageOS/android.git -b lineage-24.0 --git-lfs
+   ```
+
+2. Add this local manifest:
+   ```bash
+   git clone https://github.com/Jiro-SDM845M/local_manifests.git .repo/local_manifests
+   ```
+
+3. Sync all repositories:
+   ```bash
+   repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
+   ```
+
+4. Build LineageOS for POCO F1:
+   ```bash
+   source build/envsetup.sh
+   lunch lineage_beryllium-ap2a-userdebug
+   m bacon
+   ```
