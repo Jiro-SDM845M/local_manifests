@@ -1,23 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-    <!-- LineageOS Mainline Core Infrastructure -->
-    <project name="Jiro-SDM845M/android_device_mainline_common" path="device/mainline/common" remote="github" revision="lineage-24.0" />
-    <project name="Jiro-SDM845M/android_device_mainline_qcom-common" path="device/mainline/qcom-common" remote="github" revision="lineage-24.0" />
-    <project name="Jiro-SDM845M/android_device_mainline_generic" path="device/mainline/generic" remote="github" revision="lineage-24.0" />
-    <project name="Jiro-SDM845M/android_hardware_mainline" path="hardware/mainline" remote="github" revision="lineage-24.0" />
-    <project name="Jiro-SDM845M/android_hardware_mainline_common" path="hardware/mainline/common" remote="github" revision="lineage-24.0" />
-    <project name="Jiro-SDM845M/android_hardware_mainline_qcom" path="hardware/mainline/qcom" remote="github" revision="lineage-24.0" />
-    <project name="Jiro-SDM845M/android_vendor_mainline" path="vendor/mainline" remote="github" revision="lineage-24.0" />
-    <project name="Jiro-SDM845M/android_kernel_mainline_configs" path="kernel/mainline/configs" remote="github" revision="lineage-24.0" />
-    <project name="Jiro-SDM845M/android_external_linux-firmware-mainline" path="external/linux-firmware-mainline" remote="github" revision="lineage-24.0" />
+    <remote name="lineage-mainline" fetch="https://github.com/LineageOS" />
+    <remote name="jiro-mainline" fetch="https://github.com/Jiro-SDM845M" />
+
+    <!-- LineageOS Official Mainline Infrastructure (Unchanged Upstream) -->
+    <project name="android_device_mainline_common" path="device/mainline/common" remote="lineage-mainline" revision="lineage-24.0" />
+    <project name="android_hardware_mainline_common" path="hardware/mainline/common" remote="lineage-mainline" revision="lineage-24.0" />
+    <project name="android_hardware_mainline_qcom" path="hardware/mainline/qcom" remote="lineage-mainline" revision="lineage-24.0" />
+    <project name="android_vendor_mainline" path="vendor/mainline" remote="lineage-mainline" revision="lineage-24.0" />
+    <project name="android_kernel_mainline_configs" path="kernel/mainline/configs" remote="lineage-mainline" revision="lineage-24.0" />
+    <project name="android_external_linux-firmware-mainline" path="external/linux-firmware-mainline" remote="lineage-mainline" revision="lineage-24.0" />
 
     <!-- Mainline Graphics & Boot Manager Dependencies -->
-    <project name="Jiro-SDM845M/android_prebuilts_bootmgr" path="prebuilts/bootmgr" remote="github" revision="lineage-24.0" />
-    <project name="Jiro-SDM845M/android_external_minigbm-upstream" path="external/minigbm-upstream" remote="github" revision="lineage-24.0" />
-    <project name="Jiro-SDM845M/android_external_drm_hwcomposer-upstream" path="external/drm_hwcomposer-upstream" remote="github" revision="lineage-24.0" />
+    <project name="android_prebuilts_bootmgr" path="prebuilts/bootmgr" remote="lineage-mainline" revision="lineage-24.0" />
+    <project name="android_external_minigbm-upstream" path="external/minigbm-upstream" remote="lineage-mainline" revision="lineage-24.0" />
+    <project name="android_external_drm_hwcomposer-upstream" path="external/drm_hwcomposer-upstream" remote="lineage-mainline" revision="lineage-24.0" />
 
-    <!-- Qualcomm SDM845 & Xiaomi POCO F1 Mainline Device Trees (Direction A: Firmware Symlink) -->
-    <project name="Jiro-SDM845M/android_device_xiaomi_sdm845-mainline" path="device/xiaomi/sdm845-mainline" remote="github" revision="lineage-24.0" />
-    <project name="Jiro-SDM845M/android_device_xiaomi_beryllium-mainline" path="device/xiaomi/beryllium-mainline" remote="github" revision="lineage-24.0" />
-    <project name="Jiro-SDM845M/android_kernel_xiaomi_sdm845" path="kernel/xiaomi/sdm845" remote="github" revision="7.4-beryllium" />
+    <!-- Qualcomm SDM845 & Xiaomi POCO F1 Mainline Trees (Maintained by Jiro-SDM845M) -->
+    <project name="android_device_mainline_qcom-common" path="device/mainline/qcom-common" remote="jiro-mainline" revision="lineage-24.0" />
+    <project name="android_device_xiaomi_sdm845-mainline" path="device/xiaomi/sdm845-mainline" remote="jiro-mainline" revision="lineage-24.0" />
+    <project name="android_device_xiaomi_beryllium-mainline" path="device/xiaomi/beryllium-mainline" remote="jiro-mainline" revision="lineage-24.0" />
+    <project name="android_kernel_xiaomi_sdm845" path="kernel/xiaomi/sdm845" remote="jiro-mainline" revision="7.4-beryllium" />
 </manifest>
