@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+    <!-- LineageOS Mainline Core Infrastructure -->
+    <project name="Jiro-SDM845M/android_device_mainline_common" path="device/mainline/common" remote="github" revision="lineage-22.2" />
+    <project name="Jiro-SDM845M/android_device_mainline_qcom-common" path="device/mainline/qcom-common" remote="github" revision="lineage-22.2" />
+    <project name="Jiro-SDM845M/android_device_mainline_generic" path="device/mainline/generic" remote="github" revision="lineage-22.2" />
+    <project name="Jiro-SDM845M/android_hardware_mainline" path="hardware/mainline" remote="github" revision="lineage-22.2" />
+    <project name="Jiro-SDM845M/android_hardware_mainline_common" path="hardware/mainline/common" remote="github" revision="lineage-22.2" />
+    <project name="Jiro-SDM845M/android_hardware_mainline_qcom" path="hardware/mainline/qcom" remote="github" revision="lineage-22.2" />
+    <project name="Jiro-SDM845M/android_vendor_mainline" path="vendor/mainline" remote="github" revision="lineage-22.2" />
+    <project name="Jiro-SDM845M/android_kernel_mainline_configs" path="kernel/configs/mainline" remote="github" revision="lineage-22.2" />
+    <project name="Jiro-SDM845M/android_external_linux-firmware-mainline" path="external/linux-firmware-mainline" remote="github" revision="lineage-22.2" />
+
+    <!-- Qualcomm SDM845 & Xiaomi POCO F1 Mainline Trees -->
+    <project name="Jiro-SDM845M/android_device_xiaomi_sdm845-mainline" path="device/xiaomi/sdm845-common" remote="github" revision="main" />
+    <project name="Jiro-SDM845M/android_device_xiaomi_beryllium-mainline" path="device/xiaomi/beryllium" remote="github" revision="main" />
+    <project name="Jiro-SDM845M/android_vendor_xiaomi_beryllium-mainline" path="vendor/xiaomi/beryllium" remote="github" revision="main" />
+    <project name="Jiro-SDM845M/android_kernel_xiaomi_sdm845" path="kernel/xiaomi/sdm845" remote="github" revision="main" />
+</manifest>
