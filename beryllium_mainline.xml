@@ -19,5 +19,5 @@
     <!-- Qualcomm SDM845 & Xiaomi POCO F1 Mainline Device Trees (Direction A: Firmware Symlink) -->
     <project name="Jiro-SDM845M/android_device_xiaomi_sdm845-mainline" path="device/xiaomi/sdm845-mainline" remote="github" revision="lineage-24.0" />
     <project name="Jiro-SDM845M/android_device_xiaomi_beryllium-mainline" path="device/xiaomi/beryllium-mainline" remote="github" revision="lineage-24.0" />
-    <project name="Jiro-SDM845M/android_kernel_xiaomi_sdm845" path="kernel/xiaomi/sdm845" remote="github" revision="sdm845/7.1-dev" />
+    <project name="Jiro-SDM845M/android_kernel_xiaomi_sdm845" path="kernel/xiaomi/sdm845" remote="github" revision="7.4-beryllium" />
 </manifest>
