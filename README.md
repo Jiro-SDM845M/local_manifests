@@ -26,6 +26,6 @@ This repository provides the local manifest required to build **LineageOS Mainli
 4. Build LineageOS for POCO F1:
    ```bash
    source build/envsetup.sh
-   lunch lineage_beryllium-ap2a-userdebug
+   lunch lineage_beryllium-userdebug
    m bacon
    ```
